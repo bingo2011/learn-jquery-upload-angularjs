@@ -24,7 +24,7 @@
         imageMagick = require('imagemagick'),
         options = {
             tmpDir: __dirname + '/tmp',
-            publicDir: __dirname + '/public',
+            publicDir: __dirname,
             uploadDir: __dirname + '/public/files',
             uploadUrl: '/files/',
             maxPostSize: 11000000000, // 11 GB
@@ -118,16 +118,17 @@
                 break;
             case 'HEAD':
             case 'GET':
-                if (req.url !== '/') {
-                    setNoCacheHeaders();
-                    if (req.method === 'GET') {
-                        handler.get();
-                    } else {
-                        res.end();
-                    }
-                } else {
-                    fileServer.serve(req, res);
-                }
+                // if (req.url === '/') {
+                //     setNoCacheHeaders();
+                //     if (req.method === 'GET') {
+                //         handler.get();
+                //     } else {
+                //         res.end();
+                //     }
+                // } else {
+                //     fileServer.serve(req, res);
+                // }
+                fileServer.serve(req, res);
                 break;
             case 'POST':
                 setNoCacheHeaders();

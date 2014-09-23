@@ -8,11 +8,30 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				options: {
-					destPrefix: 'scripts/vendor'
+					destPrefix: 'js/vendor'
 				},
 				files: {
 					 'jquery.js': 'jquery/dist/jquery.js'
-				    ,'angular.js': 'angular/angular.js'
+					 ,'jquery-ui.js': 'jquery-ui/jquery-ui.js'
+				     ,'angular.js': 'angular/angular.js'
+				}
+			},
+			css: {
+				options: {
+					destPrefix: 'css/vendor'
+				},
+				files: {
+					'bootstrap.css': 'bootstrap/dist/css/bootstrap.css'
+					,'bootstrap.css.map': 'bootstrap/dist/css/bootstrap.css.map'
+					,'jquery.fileupload.css': 'jquery-file-upload/css/jquery.fileupload.css'
+					,'jquery.fileupload-ui.css': 'jquery-file-upload/css/jquery.fileupload-ui.css'
+					,'jquery.fileupload-noscript.css': 'jquery-file-upload/css/jquery.fileupload-noscript.css'
+					,'jquery.fileupload-ui-noscript.css': 'jquery-file-upload/css/jquery.fileupload-ui-noscript.css'
+				}
+			},
+			fonts: {
+				files: {
+					'css/fonts': 'bootstrap/dist/fonts'
 				}
 			}
 		}
